@@ -1,19 +1,21 @@
-import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;
+//(c) A+ Computer Science
+//www.apluscompsci.com
+//Name -
 
-public class LineCounterRunner {
-	public static void main(String args[]) throws FileNotFoundException {
-		
-		Scanner scan = new Scanner(new File("LineCounter.txt"));
-		
-		for(;scan.hasNextLine();)
-		{
-			String line = scan.nextLine();
-			LineCounter lc = new LineCounter(line);
-			
-			System.out.println(line);
-			System.out.println(lc);
-		}
-	}
+import java.util.Scanner;
+import java.io.*;
+import static java.lang.System.*;  
+
+public class LineCounterRunner
+{
+   public static void main( String args[] )throws IOException
+   {	
+       Scanner in  = new Scanner(new File("LineCounter.txt"));
+       LineCounter x = new LineCounter();
+       while(in.hasNextLine())
+       {
+           x.setLine(in.nextLine());
+           System.out.println(x.getCount());
+       }
+    }
 }
